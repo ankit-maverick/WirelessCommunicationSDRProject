@@ -1,0 +1,56 @@
+Project Description
+
+The project carries a 30 marks (upto 40) weightage, and should be submitted about two weeks before the end of the course. The exact dates will be announced later.  Two members can form a team.
+
+The statement of the project may get slightly refined as we go on. But, this project should
+force each one in EE764 to go through one complete cycle of development through a software
+radio platform (SDR/USRP), and get a real feel of what kind of technologies hold promise.
+Further, this allows a natural relation between the theory that we learn and its application
+in practice.
+
+We already have set up four dedicated SDR transceivers in the Information Systems and Radios
+lab, situated in GG top-floor. You are welcome to visit and inspect.  Two of this transceivers
+will be given for the experimental part of this course. These are situated roughly 6-8meters
+apart, and will be fixed in the lab environment. Think of one as the transmitter and other
+as the receiver. The capabilities of these devices were already mentioned to you in the
+extraclass (workshop). If you have any more doubts, visit the lab and enquire.
+
+The project is a `bit' open-ended in the sense that we will allow you to do whatever you
+wish on this experimental testbed. The objective is to transport the maximum amount of data
+from the transmitter to the receiver at an error probability below 10^{-7}. You can
+decide on the kind of data that is communicated, but one also needs to construct a BER
+counting mechanism  for the data that you use.   In the beginning it is advisable to use
+a simple repeated pattern of `10' as the input bits, which can be
+manually/automatically checked without  much effort.
+
+You can choose the digital modulation schemes. For example, one can try B-PSK, Q-PSK, 8-PSK
+etc. Higher the constellation, higher will be the data transported, however the BER will
+also be high. You have to find a compromise to obtain a reasonable BER.  Notice that you
+can choose a smaller constellation, but a wider bandwidth to push more data per second.
+However, this means less power in each symbol and BER can go up. You have to again understand
+the trade-offs, either analytically or experimentally. I will suggest start with BPSK, see
+whether you can establish a 100kpbps link.  Target to reach there by the end of February
+second week. Notice that there also are options like CDMA/OFDMA which can harness the wide bandwidth available.
+
+In order to do the development, it is good to first test everything in GNURADIO companion (GRC)
+internally, before routing the data through the wireless systems. Please start now by
+making a small program using BPSK, set the bandwidth and associated parameters, and
+get the detector ready. See if you can form a block which measures the BER for your data.
+Most of these blocks are already available  in GRC, except perhaps the last one. Jump in and
+start playing around.  Once it works, straightaway contact Manu TS (ISR lab)for a time in the lab where you can test your actual performance.
+
+Sometimes, you may manage to send a lot of data, but the BER is above the admissible limit.
+In this case, it is advisable to do error correction coding, which can dramatically change
+the BER performance.  Blocks to this effect are already available in GRC, but you have
+to reach this stage first.
+
+Once you pass the 1Mbps hurdle,  we will allow using of more resources and SDRs to form
+innovative schemes.
+
+The tentative marking scheme is 10 marks for 1 Mbps, and 5 marks for every further Mbps.
+Though the project is 30marks, there is 10marks bonus for excellent designs, taking the
+overall score to 40/100. Note, I increased the marks after the base limit.  The maximal
+throughout (bitrate at the given BER) system will be given 10marks. In the final
+demonstration, you will be asked to present your scheme, and demonstrate the speed
+as well as BER to an expert group (with external members from the industry).
+
